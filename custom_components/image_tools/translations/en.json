@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Image Tools — Setup",
+        "description": "Configure the Image Tools integration. The **Work Directory** is optional — if provided it is shown in the UI for reference, but each service call always specifies the full file path explicitly.",
+        "data": {
+          "work_dir": "Work Directory (optional)"
+        }
+      }
+    },
+    "error": {
+      "unknown": "Unexpected error. Please check the logs for more information."
+    },
+    "abort": {
+      "already_configured": "Image Tools is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "working": "Working",
+          "idle": "Idle"
+        },
+        "state_attributes": {
+          "last_job": {
+            "name": "Last Job"
+          },
+          "last_operation": {
+            "name": "Last Operation"
+          },
+          "timestamp": {
+            "name": "Timestamp"
+          },
+          "processes": {
+            "name": "Processes"
+          }
+        }
+      }
+    }
+  }
+}
