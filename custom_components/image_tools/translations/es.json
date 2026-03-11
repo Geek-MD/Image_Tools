@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Image Tools — Configuración",
+        "description": "Configura la integración Image Tools. El **Directorio de Trabajo** es opcional — si se proporciona aparece en la interfaz como referencia, pero cada llamada a los servicios siempre especifica la ruta completa explícitamente.",
+        "data": {
+          "work_dir": "Directorio de Trabajo (opcional)"
+        }
+      }
+    },
+    "error": {
+      "unknown": "Error inesperado. Por favor, revisa los registros para más información."
+    },
+    "abort": {
+      "already_configured": "Image Tools ya está configurado."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Estado",
+        "state": {
+          "working": "Trabajando",
+          "idle": "Inactivo"
+        },
+        "state_attributes": {
+          "last_job": {
+            "name": "Último Trabajo"
+          },
+          "last_operation": {
+            "name": "Última Operación"
+          },
+          "timestamp": {
+            "name": "Marca de Tiempo"
+          },
+          "processes": {
+            "name": "Procesos"
+          }
+        }
+      }
+    }
+  }
+}
