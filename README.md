@@ -6,6 +6,10 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/Geek-MD/Image_Tools/blob/main/LICENSE)
 [![HACS Custom Repository](https://img.shields.io/badge/HACS-Custom%20Repository-blue)](https://hacs.xyz/)
 
+<!-- ha-marketplace:exclude-start -->
+[![Open your Home Assistant instance and open Image Tools in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Geek-MD&repository=Image_Tools&category=integration)
+<!-- ha-marketplace:exclude-end -->
+
 [![Ruff + Mypy + Hassfest](https://github.com/Geek-MD/Image_Tools/actions/workflows/validate.yml/badge.svg)](https://github.com/Geek-MD/Image_Tools/actions/workflows/validate.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
@@ -20,7 +24,7 @@ Home Assistant (PNG, JPG, WebP, GIF, BMP, TIFF).
 
 Version **0.1.1** includes the metadata and validation required for Home Assistant 2026.11 Marketplace compatibility.
 
-## Features
+## ✨ Features
 
 - **`resize_image` service** — resize an image to a target width and/or height,
   with optional aspect-ratio control (crop, letterbox, or stretch).
@@ -35,9 +39,15 @@ Version **0.1.1** includes the metadata and validation required for Home Assista
 - Easy **UI setup** through Settings → Devices & Services.
 - **HACS** installable as a custom repository.
 
-## Installation
+## 🛠 Installation
 
-### HACS (Recommended)
+### Option 1: Marketplace (Home Assistant 2026.11 or newer)
+
+1. Go to **Settings → Marketplace**.
+2. Search for **Image Tools**, select **Install**, and confirm the version.
+3. Complete setup when Home Assistant opens the integration page.
+
+### Option 2: HACS (Home Assistant 2026.10 or older)
 
 1. Open HACS in your Home Assistant instance.
 2. Click on **Integrations**.
@@ -50,7 +60,7 @@ Version **0.1.1** includes the metadata and validation required for Home Assista
 9. Click **+ Add Integration** and search for **Image Tools**.
 10. Follow the configuration steps.
 
-### Manual Installation
+### Option 3: Manual installation
 
 1. Copy the `custom_components/image_tools` directory into your Home Assistant
    `custom_components` folder.
@@ -59,7 +69,7 @@ Version **0.1.1** includes the metadata and validation required for Home Assista
 4. Click **+ Add Integration** and search for **Image Tools**.
 5. Follow the configuration steps.
 
-## Configuration
+## ⚙️ Configuration
 
 Image Tools can only be configured **once** per Home Assistant instance.
 
@@ -67,7 +77,7 @@ During setup you will be asked for an optional **Work Directory** — a referenc
 shown in the UI. All service calls specify full file paths explicitly, so this field
 is informational only.
 
-## Services
+## 🖥 Services
 
 ### `image_tools.resize_image`
 
@@ -154,7 +164,7 @@ automation:
           output_format: "webp"
 ```
 
-## Entities
+## 📊 Entities
 
 ### Status Sensor — `sensor.image_tools_status`
 
@@ -191,7 +201,7 @@ automation:
             Operation: {{ state_attr('sensor.image_tools_status', 'last_operation') }}
 ```
 
-## Events
+## 📡 Events
 
 Both services fire the `image_tools_image_processing_finished` event when they
 complete (regardless of success or failure).
@@ -228,7 +238,7 @@ automation:
             Error: {{ trigger.event.data.error }}
 ```
 
-## Service Lifecycle
+## 🔄 Service lifecycle
 
 Every service call follows this lifecycle to guarantee correct event and sensor ordering:
 
@@ -237,7 +247,7 @@ Every service call follows this lifecycle to guarantee correct event and sensor 
    can react before any state update.
 3. **Update sensor** — the status sensor transitions to `idle` with the job result.
 
-## Requirements
+## 📋 Requirements
 
 - Home Assistant 2023.1.0 or newer.
 - [Pillow](https://pillow.readthedocs.io/) — already bundled with Home Assistant core.
