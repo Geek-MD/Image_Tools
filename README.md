@@ -18,6 +18,8 @@ Home Assistant custom integration that exposes services for resizing images,
 adjusting their aspect ratio, and converting between image formats supported by
 Home Assistant (PNG, JPG, WebP, GIF, BMP, TIFF).
 
+Version **0.1.1** includes the metadata and validation required for Home Assistant 2026.11 Marketplace compatibility.
+
 ## Features
 
 - **`resize_image` service** — resize an image to a target width and/or height,
